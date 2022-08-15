@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object model</title>
+</head>
+<body>    
+    <main id="main-section">
+        <section id="header">
+            <h1>Document object model practice</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati vitae rem asperiores natus porro iure, saepe eius provident. Eaque, mollitia possimus. Nesciunt numquam hic earum odio itaque ipsum expedita temporibus!</p>
+            <ul>
+                <li>place-1</li>
+                <li>place-2</li>
+                <li>place-3</li>
+                <li>place-4</li>
+            </ul>
+        </section>
+        <section id="list-items">
+            <ul id="list">
+                <li>item-1</li>
+                <li>item-2</li>
+                <li>item-3</li>
+                <li>item-4</li>
+            </ul>
+        </section>
+        <section id="input-area">
+             <input type="text" id="input">
+            <button id="btn">Add To list</button>
+        </section>
+    </main>
+   <script>
+        
+        const headerSection = document.getElementById('header')
+        // console.log(headerSection.childNodes);
+
+        const mainList = document.getElementById('list');
+        const li = document.createElement('li');
+        console.log(li);
+            li.innerText = 'new item added'
+        mainList.appendChild(li);
+
+
+        const mainSection = document.getElementById('main-section');
+        const newSection = document.createElement('section');
+        newSection.innerHTML = `<h1>New section added</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati vitae rem asperiores natus porro iure, saepe eius provident. Eaque, mollitia possimus. Nesciunt numquam hic earum odio itaque ipsum expedita temporibus!</p>`
+
+        const newUl = document.createElement('ul');
+        const newli1 = document.createElement('li');
+        newli1.innerText= 'place a';
+        newUl.appendChild(newli1);
+        const newli2 = document.createElement('li');
+        newli2.innerText = 'place b';
+        newUl.appendChild(newli2);
+        const newli3 = document.createElement('li');
+        newli3.innerText = 'place c';
+        newUl.appendChild(newli3);
+        const newli4 = document.createElement('li');
+        newli4.innerText = 'place d';
+        newUl.appendChild(newli4);
+        newSection.appendChild(newUl)
+        mainSection.appendChild(newSection);
+
+        // styling
+        const sections = document.querySelectorAll('section');
+        for(section of sections){
+            section.style.border = '3px solid gray';
+            section.style.borderBottom = '5px solid red';
+            section.style.background = 'lightgray';
+            section.style.margin = '20px';
+            section.style.padding = '10px';
+        }
+   </script>
+    <script src="./dom.js"></script>
+</body>
+</html>
